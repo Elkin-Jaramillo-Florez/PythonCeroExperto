@@ -1,4 +1,4 @@
-user_option = input("piedra, papel o tijera => ")
+user_option = input("piedra, papel o tijera => ").lower()
 computer_option = "piedra"
 message_win = "user gano!"
 message_lose = "computer gano!"
