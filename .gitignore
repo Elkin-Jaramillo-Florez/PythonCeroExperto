@@ -2,6 +2,13 @@
 *.csv
 *.txt
 
+### replit ###
+# Replit config file
+.replit
+
+# Replit Nix config file
+replit.nix
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
