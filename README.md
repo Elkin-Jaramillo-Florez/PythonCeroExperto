@@ -41,3 +41,9 @@ pip3 -V
 ```shell
 sudo apt install -y build-essential libssl-dev libffi-dev python3-dev
 ```
+
+## Instalación de virtual env
+
+```sh
+sudo apt install -y python3-venv
+```
