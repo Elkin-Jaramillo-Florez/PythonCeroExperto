@@ -102,8 +102,7 @@ def get_movies():
     return movies
 
 
-@app.get("/movies", tags=["Movies"])
-@app.get("/movies/{id}")
+@app.get("/movies/{id}", tags=["Movies"])
 def get_movie(id: int):
     for item in movies:
         if item["id"] == id:
@@ -114,3 +113,8 @@ def get_movie(id: int):
 @app.get("/movies/", tags=["Movies"])
 def get_movies_by_categories(category: str, year: int):
     return category, year
+
+
+@app.get("/movies/", tags=["Movies"])
+def get_filter_categories(category: str):
+    return [movie for movie in movies if movie["category"] == category]
