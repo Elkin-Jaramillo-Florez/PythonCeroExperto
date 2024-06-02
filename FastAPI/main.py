@@ -8,8 +8,8 @@ app.title = "Mi aplicación con FastAPI"
 app.version = "0.0.1"
 
 
-movies = {
-    1: {
+movies = [
+    {
         "id": 1,
         "title": "The Godfather",
         "overview": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
@@ -17,7 +17,7 @@ movies = {
         "rating": 9.2,
         "category": "Crime, Drama",
     },
-    2: {
+    {
         "id": 2,
         "title": "The Dark Knight",
         "overview": "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham.",
@@ -25,7 +25,7 @@ movies = {
         "rating": 9.0,
         "category": "Action, Crime, Drama",
     },
-    3: {
+    {
         "id": 3,
         "title": "Pulp Fiction",
         "overview": "The lives of two mob hitmen, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
@@ -33,7 +33,7 @@ movies = {
         "rating": 8.9,
         "category": "Crime, Drama",
     },
-    4: {
+    {
         "id": 4,
         "title": "Schindler's List",
         "overview": "In German-occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his Jewish workforce.",
@@ -41,7 +41,7 @@ movies = {
         "rating": 8.9,
         "category": "Biography, Drama, History",
     },
-    5: {
+    {
         "id": 5,
         "title": "The Lord of the Rings: The Return of the King",
         "overview": "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
@@ -49,7 +49,7 @@ movies = {
         "rating": 8.9,
         "category": "Adventure, Drama, Fantasy",
     },
-    6: {
+    {
         "id": 6,
         "title": "Forrest Gump",
         "overview": "The presidencies of Kennedy and Johnson, the Vietnam War, the Watergate scandal, and other historical events unfold from the perspective of an Alabama man with an IQ of 75.",
@@ -57,7 +57,7 @@ movies = {
         "rating": 8.8,
         "category": "Drama, Romance",
     },
-    7: {
+    {
         "id": 7,
         "title": "Inception",
         "overview": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
@@ -65,7 +65,7 @@ movies = {
         "rating": 8.8,
         "category": "Action, Adventure, Sci-Fi",
     },
-    8: {
+    {
         "id": 8,
         "title": "The Matrix",
         "overview": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
@@ -73,7 +73,7 @@ movies = {
         "rating": 8.7,
         "category": "Action, Sci-Fi",
     },
-    9: {
+    {
         "id": 9,
         "title": "Gladiator",
         "overview": "A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.",
@@ -81,7 +81,7 @@ movies = {
         "rating": 8.5,
         "category": "Action, Adventure, Drama",
     },
-    10: {
+    {
         "id": 10,
         "title": "Interstellar",
         "overview": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
@@ -89,7 +89,7 @@ movies = {
         "rating": 8.6,
         "category": "Adventure, Drama, Sci-Fi",
     },
-}
+]
 
 
 @app.get("/", tags=["Home"])
@@ -100,3 +100,12 @@ def message():
 @app.get("/movies", tags=["Movies"])
 def get_movies():
     return movies
+
+
+@app.get("/movies", tags=["Movies"])
+@app.get("/movies/{id}")
+def get_movie(id: int):
+    for item in movies:
+        if item["id"] == id:
+            return item
+    return []
