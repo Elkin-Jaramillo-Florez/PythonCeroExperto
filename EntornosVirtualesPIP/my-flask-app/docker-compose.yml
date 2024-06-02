@@ -1,0 +1,20 @@
+# Documento de configuración de Docker Compose
+
+# Versión del formato del archivo Docker Compose
+version: "3"
+
+# Definición de servicios
+services:
+  # Servicio web
+  web:
+    # Construir la imagen del contenedor desde el directorio actual (.)
+    build: .
+    # Mapear el puerto 5000 del contenedor al puerto 5000 del host
+    ports:
+      - "5000:5000"
+    # Montar el directorio actual como un volumen dentro del contenedor en la ruta /app
+    volumes:
+      - .:/app
+    # Definir la variable de entorno FLASK_ENV con el valor 'development'
+    environment:
+      FLASK_ENV: development
