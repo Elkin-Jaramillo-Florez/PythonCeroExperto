@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Body
+from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 from typing import List
@@ -13,6 +13,14 @@ app.version = "0.0.1"
 
 class Movie(BaseModel):
     id: int
+    title: str
+    overview: str
+    year: int
+    rating: float
+    category: str
+
+
+class MovieUpdate(BaseModel):
     title: str
     overview: str
     year: int
@@ -52,3 +60,23 @@ def get_filter_categories(category: str):
 def post_movies(movie: Movie):
     movies.append(movie.dict())
     return movies
+
+
+@app.put("/movies/{id}", tags=["Movies"], response_model=List[Movie])
+def update_movies(id: int, movie: MovieUpdate):
+    for item in movies:
+        if item["id"] == id:
+            item["title"] = movie.title
+            item["overview"] = movie.overview
+            item["year"] = movie.year
+            item["rating"] = movie.rating
+            item["category"] = movie.category
+            return movies
+
+
+@app.delete("/movies/{id}", tags=["Movies"], response_model=List[Movie])
+def delete_movie(id: int):
+    for item in movies:
+        if item["id"] == id:
+            movies.remove(item)
+            return movies
