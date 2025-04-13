@@ -1,6 +1,13 @@
+# ======================================
+# HOLA MUNDO Y VARIABLES
+# ======================================
+
+# Imprimir mensaje básico
 print("Hola Mundo desde Python")
 
-# Variables
-saludo = 'Hola'
-nombre = 'Jose'
+# Declaración de variables
+saludo = "Hola"
+nombre = "Jose"
+
+# Concatenación con f-string
 print(f"{saludo} {nombre} desde Python")
