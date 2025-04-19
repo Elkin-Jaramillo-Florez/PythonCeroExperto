@@ -3,7 +3,8 @@
 
 ### Files ###
 *.png
-./CursoPython/practica
+
+CursoPython/practica/*
 
 ### Linux ###
 *~
