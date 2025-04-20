@@ -5,6 +5,7 @@
 *.png
 
 CursoPython/practica/*
+CursoPython/requirements.txt
 
 ### Linux ###
 *~
