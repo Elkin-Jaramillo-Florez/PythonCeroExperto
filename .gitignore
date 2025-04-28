@@ -1,41 +1,50 @@
-# Created by https://www.toptal.com/developers/gitignore/api/replit,linux,macos,windows,python,visualstudiocode
-# Edit at https://www.toptal.com/developers/gitignore?templates=replit,linux,macos,windows,python,visualstudiocode
+# ==========================================
+# Archivos del proyecto
+# ==========================================
 
-### Files ###
+# Imágenes
 *.png
 
+# Archivos de práctica y fuente (ignorarlos)
 CursoPython/practica/*
+CursoPython/source/*
+
+# Requerimientos de Python
 CursoPython/requirements.txt
 
-### Linux ###
+# ==========================================
+# Sistema Operativo: Linux
+# ==========================================
+
+# Archivos temporales
 *~
 
-# temporary files which can be created if a process still has a handle open of a deleted file
+# Archivos ocultos al borrar mientras están abiertos
 .fuse_hidden*
 
-# KDE directory preferences
+# Preferencias de carpetas KDE
 .directory
 
-# Linux trash folder which might appear on any partition or disk
+# Papelera de Linux
 .Trash-*
 
-# .nfs files are created when an open file is removed but is still being accessed
+# Archivos NFS
 .nfs*
 
-### macOS ###
-# General
+# ==========================================
+# Sistema Operativo: macOS
+# ==========================================
+
+# Archivos de sistema
 .DS_Store
 .AppleDouble
 .LSOverride
-
-# Icon must end with two \r
 Icon
 
-
-# Thumbnails
+# Miniaturas
 ._*
 
-# Files that might appear in the root of a volume
+# Archivos del sistema de archivos
 .DocumentRevisions-V100
 .fseventsd
 .Spotlight-V100
@@ -44,27 +53,58 @@ Icon
 .VolumeIcon.icns
 .com.apple.timemachine.donotpresent
 
-# Directories potentially created on remote AFP share
+# Directorios remotos AFP
 .AppleDB
 .AppleDesktop
 Network Trash Folder
 Temporary Items
 .apdisk
 
-### macOS Patch ###
-# iCloud generated files
+# Archivos de iCloud
 *.icloud
 
-### Python ###
-# Byte-compiled / optimized / DLL files
+# ==========================================
+# Sistema Operativo: Windows
+# ==========================================
+
+# Cachés de miniaturas
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Archivos de volcado
+*.stackdump
+
+# Configuración de carpetas
+[Dd]esktop.ini
+
+# Papelera de reciclaje
+$RECYCLE.BIN/
+
+# Instaladores de Windows
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Accesos directos de Windows
+*.lnk
+
+# ==========================================
+# Python
+# ==========================================
+
+# Archivos bytecode
 __pycache__/
 *.py[cod]
 *$py.class
 
-# C extensions
+# Extensiones en C
 *.so
 
-# Distribution / packaging
+# Distribución / Empaquetado
 .Python
 build/
 develop-eggs/
@@ -84,17 +124,15 @@ share/python-wheels/
 *.egg
 MANIFEST
 
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+# PyInstaller (generación de ejecutables)
 *.manifest
 *.spec
 
-# Installer logs
+# Logs de instalación
 pip-log.txt
 pip-delete-this-directory.txt
 
-# Unit test / coverage reports
+# Reportes de pruebas unitarias y cobertura
 htmlcov/
 .tox/
 .nox/
@@ -109,31 +147,33 @@ coverage.xml
 .pytest_cache/
 cover/
 
-# Translations
+# Archivos de traducción
 *.mo
 *.pot
 
-# Django stuff:
-*.log
-local_settings.py
+# Archivos de bases de datos locales
 db.sqlite3
 db.sqlite3-journal
 
-# Flask stuff:
+# Configuraciones locales
+*.log
+local_settings.py
+
+# Flask
 instance/
 .webassets-cache
 
-# Scrapy stuff:
+# Scrapy
 .scrapy
 
-# Sphinx documentation
+# Documentación con Sphinx
 docs/_build/
 
 # PyBuilder
 .pybuilder/
 target/
 
-# Jupyter Notebook
+# Jupyter Notebooks
 .ipynb_checkpoints
 
 # IPython
@@ -141,43 +181,30 @@ profile_default/
 ipython_config.py
 
 # pyenv
-#   For a library or package, you might want to ignore these files since the code is
-#   intended to run in multiple environments; otherwise, check them in:
-# .python-version
+# .python-version  # (Descomentarlo si se quiere ignorar)
 
 # pipenv
-#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-#   having no cross-platform support, pipenv may install dependencies that don't work, or not
-#   install all needed dependencies.
-#Pipfile.lock
+# Pipfile.lock  # (Generalmente se incluye en control de versiones)
 
 # poetry
-#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
-#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
-#poetry.lock
+# poetry.lock   # (Generalmente se incluye en control de versiones)
+poetry.toml
 
 # pdm
-#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
-#pdm.lock
-#   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
-#   in version control.
-#   https://pdm.fming.dev/#use-with-ide
+# pdm.lock      # (Generalmente se incluye en control de versiones)
 .pdm.toml
 
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
+# PEP 582 (pyflow / pdm)
 __pypackages__/
 
-# Celery stuff
+# Celery
 celerybeat-schedule
 celerybeat.pid
 
-# SageMath parsed files
+# SageMath
 *.sage.py
 
-# Environments
+# Entornos virtuales
 .env
 .venv
 env/
@@ -186,55 +213,37 @@ ENV/
 env.bak/
 venv.bak/
 
-# Spyder project settings
+# Spyder
 .spyderproject
 .spyproject
 
-# Rope project settings
+# Rope
 .ropeproject
 
-# mkdocs documentation
+# MkDocs
 /site
 
-# mypy
+# Análisis de tipos
 .mypy_cache/
 .dmypy.json
 dmypy.json
-
-# Pyre type checker
 .pyre/
-
-# pytype static type analyzer
 .pytype/
 
-# Cython debug symbols
+# Debug de Cython
 cython_debug/
 
-# PyCharm
-#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
-#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
-#  and can be added to the global gitignore or merged into this file.  For a more nuclear
-#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
-#.idea/
-
-### Python Patch ###
-# Poetry local configuration file - https://python-poetry.org/docs/configuration/#local-configuration
-poetry.toml
-
-# ruff
+# ruff (linting y formateo)
 .ruff_cache/
 
-# LSP config files
+# LSP
 pyrightconfig.json
 
-### replit ###
-# Replit config file
-.replit
+# ==========================================
+# Visual Studio Code
+# ==========================================
 
-# Replit Nix config file
-replit.nix
-
-### VisualStudioCode ###
+# Configuración local de VSCode
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -242,41 +251,24 @@ replit.nix
 !.vscode/extensions.json
 !.vscode/*.code-snippets
 
-# Local History for Visual Studio Code
+# Historial local de VSCode
 .history/
-
-# Built Visual Studio Code Extensions
-*.vsix
-
-### VisualStudioCode Patch ###
-# Ignore all local history of files
-.history
 .ionide
 
-### Windows ###
-# Windows thumbnail cache files
-Thumbs.db
-Thumbs.db:encryptable
-ehthumbs.db
-ehthumbs_vista.db
+# Extensiones VSCode generadas
+*.vsix
 
-# Dump file
-*.stackdump
+# ==========================================
+# Replit
+# ==========================================
 
-# Folder config file
-[Dd]esktop.ini
+# Configuración de Replit
+.replit
+replit.nix
 
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
+# ==========================================
+# PyCharm (opcional)
+# ==========================================
 
-# Windows Installer files
-*.cab
-*.msi
-*.msix
-*.msm
-*.msp
-
-# Windows shortcuts
-*.lnk
-
-# End of https://www.toptal.com/developers/gitignore/api/replit,linux,macos,windows,python,visualstudiocode
+# Para ignorar todo el proyecto de JetBrains (descomentar si es necesario)
+#.idea/
